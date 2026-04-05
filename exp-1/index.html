@@ -1,63 +1,228 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Experiment 1</title>
+    <title>Experiment 1 | Sarthak Garg</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
+        * {
             margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #c3ecf7, #f5c6ec);
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #040d0a;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(10px);
-            padding: 40px;
-            border-radius: 24px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            width: 350px;
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(0, 255, 140, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 140, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
         }
 
-        h1 {
-            margin-bottom: 15px;
-            color: #2c3e66;
-            font-size: 28px;
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(ellipse 700px 600px at 50% 50%, rgba(0, 200, 100, 0.07) 0%, transparent 70%);
+            pointer-events: none;
         }
 
-        p {
-            color: #5a6e8a;
-            margin-bottom: 25px;
-            line-height: 1.5;
+        .terminal {
+            background: #080f0c;
+            border: 1px solid #1a3d2a;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 460px;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(0, 200, 100, 0.08), 0 20px 60px rgba(0,0,0,0.6);
+        }
+
+        .term-bar {
+            background: #0d1a14;
+            border-bottom: 1px solid #1a3d2a;
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dot { width: 11px; height: 11px; border-radius: 50%; }
+        .dot.r { background: #ff5f57; }
+        .dot.y { background: #ffbd2e; }
+        .dot.g { background: #28c840; }
+
+        .term-title {
+            font-family: 'Fira Code', monospace;
+            font-size: 12px;
+            color: #3d6b52;
+            margin-left: 8px;
+        }
+
+        .term-body {
+            padding: 28px 28px 36px;
+        }
+
+        .line {
+            font-family: 'Fira Code', monospace;
+            font-size: 13px;
+            line-height: 2;
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .prompt { color: #00c864; }
+        .cmd    { color: #7effc4; }
+        .output { color: #4db87a; padding-left: 20px; font-size: 13px; line-height: 1.8; }
+
+        .big-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #e8f5ee;
+            margin: 22px 0 6px;
+            line-height: 1.1;
+        }
+
+        .big-title span { color: #00c864; }
+
+        .desc {
+            color: #4a8c65;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+
+        .divider {
+            height: 1px;
+            background: #1a3d2a;
+            margin: 22px 0;
+        }
+
+        .status-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            font-family: 'Fira Code', monospace;
+            font-size: 11px;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .badge.green {
+            background: rgba(0, 200, 100, 0.1);
+            border: 1px solid rgba(0, 200, 100, 0.25);
+            color: #00c864;
+        }
+
+        .badge.teal {
+            background: rgba(0, 200, 180, 0.1);
+            border: 1px solid rgba(0, 200, 180, 0.25);
+            color: #00c8b4;
+        }
+
+        .badge.dim {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid #1a3d2a;
+            color: #3d6b52;
         }
 
         .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #b374b0;
-            color: white;
-            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: transparent;
+            color: #00c864;
+            border: 1px solid #00c864;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            transition: 0.2s;
+            font-size: 14px;
+            font-family: 'Fira Code', monospace;
+            transition: all 0.2s;
         }
 
         .btn:hover {
-            background: #9a5a97;
-            transform: translateY(-2px);
+            background: rgba(0, 200, 100, 0.1);
+            box-shadow: 0 0 20px rgba(0, 200, 100, 0.15);
+            transform: translateX(-3px);
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 14px;
+            background: #00c864;
+            vertical-align: middle;
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50%       { opacity: 0; }
         }
     </style>
 </head>
 <body>
 
-<div class="card">
-    <h1>Experiment 1</h1>
-    <p>This is my first web designing experiment.</p>
-    <a href="./homepage.html" class="btn">← Back to Home</a>
+<div class="terminal">
+    <div class="term-bar">
+        <span class="dot r"></span>
+        <span class="dot y"></span>
+        <span class="dot g"></span>
+        <span class="term-title">~/web-lab/experiment-1</span>
+    </div>
+
+    <div class="term-body">
+
+        <div class="line">
+            <span class="prompt">$</span>
+            <span class="cmd">cat experiment-1.txt</span>
+        </div>
+        <div class="line output">-- Web Designing Lab File</div>
+
+        <div class="big-title">Experiment <span>01</span></div>
+        <p class="desc">This is my first web designing experiment. It covers the basics of HTML structure and CSS styling.</p>
+
+        <div class="divider"></div>
+
+        <div class="status-row">
+            <span class="badge green">✓ Complete</span>
+            <span class="badge teal">HTML / CSS</span>
+            <span class="badge dim">Sarthak Garg</span>
+        </div>
+
+        <div class="line" style="margin-bottom: 24px;">
+            <span class="prompt">$</span>
+            <span class="cmd">cd ../homepage</span>
+            <span class="cursor"></span>
+        </div>
+
+        <a href="./homepage.html" class="btn">← cd ../home</a>
+
+    </div>
 </div>
 
 </body>
