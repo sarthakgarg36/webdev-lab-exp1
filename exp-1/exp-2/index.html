@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Experiment 2 | Sarthak Garg</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="logo"><span>&lt;</span>SG<span>/&gt;</span></div>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">&#9776;</div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <p class="greeting">// Hello World, I am</p>
+            <h1>Sarthak <span class="accent">Garg</span></h1>
+            <p class="tagline">2nd Year B.Tech IT Student<br>JSS University, Noida</p>
+            <div class="hero-badges">
+                <span>Web Developer</span>
+                <span>Problem Solver</span>
+                <span>Tech Enthusiast</span>
+            </div>
+            <div class="hero-btns">
+                <a href="#projects" class="btn-primary">View Projects</a>
+                <a href="#contact" class="btn-outline">Contact Me</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="code-card">
+                <div class="code-bar">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="file-name">portfolio.js</span>
+                </div>
+                <pre class="code-block"><span class="c-kw">const</span> <span class="c-var">sarthak</span> = {
+  <span class="c-key">name</span>: <span class="c-str">"Sarthak Garg"</span>,
+  <span class="c-key">roll</span>: <span class="c-str">"J240213061"</span>,
+  <span class="c-key">branch</span>: <span class="c-str">"B.Tech IT"</span>,
+  <span class="c-key">skills</span>: [
+    <span class="c-str">"HTML"</span>, <span class="c-str">"CSS"</span>,
+    <span class="c-str">"JavaScript"</span>, <span class="c-str">"Python"</span>
+  ],
+  <span class="c-key">status</span>: <span class="c-str">"Learning 🚀"</span>
+};</pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="tag">about_me.txt</span>
+                <h2>About Me</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>I am a 2nd-year B.Tech IT student at JSS University, Noida. I enjoy building web applications and exploring new technologies through hands-on projects.</p>
+                    <p>Currently focused on strengthening my frontend and backend skills, and learning how to build complete, production-ready web applications.</p>
+                    <div class="info-chips">
+                        <div class="chip"><span class="chip-label">Roll No.</span><span class="chip-val">J240213061</span></div>
+                        <div class="chip"><span class="chip-label">Branch</span><span class="chip-val">B.Tech IT (G2)</span></div>
+                        <div class="chip"><span class="chip-label">University</span><span class="chip-val">JSS Noida</span></div>
+                    </div>
+                </div>
+                <div class="skills-box">
+                    <p class="skills-title">// Skills</p>
+                    <div class="skills-grid">
+                        <div class="skill">HTML</div>
+                        <div class="skill">CSS</div>
+                        <div class="skill">JavaScript</div>
+                        <div class="skill">Python</div>
+                        <div class="skill">C</div>
+                        <div class="skill">Java</div>
+                        <div class="skill">Git &amp; GitHub</div>
+                        <div class="skill">DBMS</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="tag">projects.json</span>
+                <h2>My Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-num">01</div>
+                    <h3>Web Designing Lab File</h3>
+                    <p>A personal web designing lab file with multiple HTML, CSS, and JavaScript experiments. Clean homepage linking all experiments.</p>
+                    <div class="project-footer">
+                        <div class="tech-stack">
+                            <span>HTML</span><span>CSS</span><span>JS</span>
+                        </div>
+                        <a href="https://github.com/sarthakgarg36/web-lab-exp1" target="_blank" class="project-link">↗ View</a>
+                    </div>
+                </div>
+                <div class="project-card featured">
+                    <div class="project-num">02</div>
+                    <h3>Portfolio Website</h3>
+                    <p>A responsive personal portfolio with smooth scrolling, animated sections, dark theme, and a validated contact form.</p>
+                    <div class="project-footer">
+                        <div class="tech-stack">
+                            <span>HTML</span><span>CSS</span><span>JS</span>
+                        </div>
+                        <a href="https://github.com/sarthakgarg36" target="_blank" class="project-link">↗ View</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-num">03</div>
+                    <h3>More Coming Soon</h3>
+                    <p>Currently exploring new technologies and building projects. Check my GitHub for the latest updates and new repositories.</p>
+                    <div class="project-footer">
+                        <div class="tech-stack">
+                            <span>In Progress</span>
+                        </div>
+                        <a href="https://github.com/sarthakgarg36" target="_blank" class="project-link">↗ GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="tag">contact.html</span>
+                <h2>Contact Me</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-left">
+                    <p>Have a question or want to connect? Drop a message below!</p>
+                    <a href="https://github.com/sarthakgarg36" target="_blank" class="gh-link">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                        github.com/sarthakgarg36
+                    </a>
+                </div>
+                <form id="contactForm">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <textarea id="message" rows="5" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn-primary">Send Message →</button>
+                    <div id="formStatus"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><span class="accent">Sarthak Garg</span> &nbsp;·&nbsp; J240213061 &nbsp;·&nbsp; <a href="../homepage.html">← Back to Home</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
