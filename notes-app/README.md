@@ -1,16 +1,52 @@
-# React + Vite
+# Notes App (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple Notes App built using React and Vite.
 
-Currently, two official plugins are available:
+It allows users to create and manage notes through a clean and responsive interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Live Demo
 
-## React Compiler
+https://notes-app-sarthakgarg36.netlify.app/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- Add notes easily
+- View notes instantly
+- Clean and simple user interface
+- Fast performance using React + Vite
+- Responsive layout
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Technologies Used
+
+- React
+- Vite
+- JavaScript
+- CSS
+
+## How to Run Locally
+
+Clone the repository:
+
+git clone <your-repository-link>
+
+Open project folder:
+
+cd notes-app
+
+Install dependencies:
+
+npm install
+
+Start development server:
+
+npm run dev
+
+Open in browser:
+
+http://localhost:5173
+
+## Author
+
+Sarthak Garg  
+Roll No: J240213061  
+IT G2
