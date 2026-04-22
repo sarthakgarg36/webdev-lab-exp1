@@ -45,6 +45,9 @@ Open in browser:
 
 http://localhost:5173
 
+## Screenshot
+Project updated on April 22, 2026
+
 ## Author
 
 Sarthak Garg  
