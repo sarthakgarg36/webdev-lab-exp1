@@ -54,7 +54,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Notes App (CRUD - React SPA)</h1>
+      <h1>My Notes App (CRUD - React SPA)</h1>
 
       <input
         type="text"
