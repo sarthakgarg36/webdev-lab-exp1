@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Smart Weather Finder</title>
+
+<style>
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(120deg, #1e3c72, #2a5298);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main Card */
+.card {
+  width: 380px;
+  padding: 40px;
+  border-radius: 25px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(15px);
+  box-shadow: 0px 15px 40px rgba(0,0,0,0.4);
+  text-align: center;
+  color: white;
+}
+
+/* Title */
+h1 {
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+/* Input Box */
+input {
+  width: 85%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+/* Button Style */
+button {
+  margin-top: 15px;
+  padding: 14px 25px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  background: #00ffd5;
+  color: black;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Hover Effect */
+button:hover {
+  background: #ffde59;
+  transform: translateY(-3px);
+}
+
+/* Weather Result Box */
+.resultBox {
+  margin-top: 25px;
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(0,0,0,0.25);
+  font-size: 18px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>🌍 Smart Weather</h1>
+
+<input type="text" id="city" placeholder="Type your city name">
+
+<br>
+
+<button onclick="getWeather()">Get Weather</button>
+
+<div id="result" class="resultBox"></div>
+
+</div>
+
+
+<script>
+
+async function getWeather() {
+
+let city = document.getElementById("city").value;
+
+if(city === "") {
+document.getElementById("result").innerHTML =
+"⚠️ Please enter a city name!";
+return;
+}
+
+try {
+
+let response =
+await fetch("https://wttr.in/" + city + "?format=j1");
+
+let data = await response.json();
+
+let temperature =
+data.current_condition[0].temp_C;
+
+let humidity =
+data.current_condition[0].humidity;
+
+let description =
+data.current_condition[0].weatherDesc[0].value;
+
+document.getElementById("result").innerHTML =
+`
+<h2>📍 ${city}</h2>
+<p>🌡 Temperature: ${temperature} °C</p>
+<p>💧 Humidity: ${humidity}%</p>
+<p>☁ Condition: ${description}</p>
+`;
+
+}
+
+catch {
+
+document.getElementById("result").innerHTML =
+"❌ Unable to fetch weather data";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
